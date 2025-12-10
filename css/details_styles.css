@@ -1,0 +1,392 @@
+/* ---------------------------------- */
+/* A. Fondo de la Página (Web Background) - CORREGIDO */
+/* ---------------------------------- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.web-background {
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 5px 0;
+}
+
+/* ---------------------------------- */
+/* B. Contenedor de la Carta de Detalles - CORREGIDO */
+/* ---------------------------------- */
+.invitation-card-details {
+    max-width: 400px; 
+    width: 90vw; 
+    height: 150vw; 
+    max-height: 500px;
+    
+    /* ¡CORRECCIÓN! Debes incluir la URL de la imagen de la carta */
+    background-image: url('../img/invitacion.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+/* ---------------------------------- */
+/* C. Texto de Detalles (Nombre/Título del Evento) */
+/* ---------------------------------- */
+.details-text-container {
+    position: absolute;
+    top: 25%; /* Ajustado para empezar debajo del sobre */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    color: #0c3d35;
+    line-height: 1.1;
+}
+
+.guest-name {
+    /* Fuente cursiva para el nombre (como "Ingrid de Portilla") */
+    font-family: 'Great Vibes', cursive; 
+    display: block;
+    font-size: 2.2em; 
+    margin-bottom: 5px;
+    white-space: nowrap; /* Evita que el nombre se rompa si es corto */
+}
+
+.event-title {
+    /* Fuente para el título (como "54th Birthday") */
+    font-family: 'Times New Roman', serif;
+    display: block;
+    font-size: 1.2em; 
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------- */
+/* D. El Elemento de Fecha (El círculo verde con bordes) */
+/* ---------------------------------- */
+.date-badge {
+    position: absolute;
+    top: 55%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45%; 
+    height: 35%; 
+    z-index: 10;
+}
+
+/* ---------------------------------- */
+/* E. El Contador (Debajo de la tarjeta) - ESTILOS JS */
+/* ---------------------------------- */
+.countdown-container {
+    width: 350px;
+    max-width: 90vw;
+    text-align: center;
+    align-self: center; 
+    margin-top: 10px; /* Separación de la tarjeta */
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    /* Fuente y color similar a la invitación */
+    font-family: 'Times New Roman', serif; 
+    color: #0c3d35; 
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-unit span:first-child {
+    /* El número grande */
+    font-size: 3em; 
+    font-weight: 500;
+}
+
+.time-unit .label {
+    /* El texto "Días", "Horas", etc. */
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin-top: -5px; /* Acercar el texto al número */
+    letter-spacing: 1px;
+}
+/* ... (Todo el CSS anterior debe permanecer) ... */
+
+/* F. Foto Principal del Evento (Más grande) - ¡AJUSTADO! */
+/* ---------------------------------- */
+.photo-container {
+    max-width: 400px; 
+    width: 90vw; 
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.main-event-photo {
+    /* AUMENTAMOS EL TAMAÑO: Usamos un 95% del contenedor para que sea grande */
+    width: 100%; 
+    max-width: 600px; /* Un tamaño máximo generoso */
+    height: auto;
+    border-radius: 10px; 
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+}
+/* ---------------------------------- */
+/* G. Etiqueta de Ubicación (Replicando etiqueta_ubicacion.jpg) - ¡AJUSTADO! */
+/* ---------------------------------- */
+.location-label-block {
+    width: 100%;
+    /* Ajustamos el max-width para que la etiqueta se centre mejor */
+    text-align: center;
+    margin-bottom: -5vh;
+}
+
+.location-header-text {
+    font-family: 'Times New Roman', serif;
+    color: #436056; /* Verde oscuro del diseño */
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.location-badge {
+    /* Usamos la imagen de la etiqueta como fondo, tal como la necesitas */
+    background-image: url('../img/etiqueta_ubicacion.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Dimensiones para que la imagen de fondo se vea bien */
+    width: 100%; 
+    height: 250px; /* Incrementamos la altura para acomodar el botón dentro */
+    margin: 0 auto;
+    position: relative;
+}
+
+.location-details {
+    /* Contenedor para posicionar el botón de UBICACIÓN */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Centrado horizontal, pero ajustamos la posición vertical */
+    transform: translateX(-50%); 
+    width: 80%;
+}
+
+/* ---------------------------------- */
+/* Estilos del Botón/Imagen de Ubicación */
+/* ---------------------------------- */
+.map-button {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-decoration: none;
+    transition: transform 0.2s;
+    
+    /* ¡AJUSTE CLAVE! Posicionamiento dentro de la etiqueta */
+    position: absolute;
+    bottom: -15px; /* Mueve el botón hacia la parte inferior de la etiqueta */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.location-button-image {
+    /* La imagen del botón ("Ubicación") */
+    width: 90%;
+    height: auto;
+    margin-bottom: -9vh;
+}
+
+.map-button:hover {
+    transform: scale(1.05) translateX(-50%); /* Ajuste de escala para que se mantenga centrado */
+}
+
+/* ---------------------------------- */
+/* H. Agenda de la Noche (Bloque 4) */
+/* ---------------------------------- */
+.agenda-block {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.agenda-image-full {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+}
+
+/* ---------------------------------- */
+/* I. Código de Vestimenta (Bloque 5) */
+/* ---------------------------------- */
+.dress-code-block {
+    width: 100%; 
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.dress-code-image-full {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------- */
+/* J. Bloque de Hospedaje / Tarifa Especial - AJUSTADO PARA CENTRADO */
+/* ---------------------------------- */
+.lodging-block {
+    /* SOLUCIÓN DE CENTRADO: Le decimos que se centre automáticamente */
+    margin: 20px auto; 
+    
+    width: 100%;
+    /* Mantenemos el límite del ancho del bloque */
+    max-width: 400px; 
+    text-align: center;
+    position: relative; /* Clave para posicionar el botón dentro */
+}
+
+.lodging-image-full {
+    /* La imagen principal de la tarifa */
+    width: 85%;
+    max-width: 350px; 
+    height: auto;
+    border-radius: 10px; 
+}
+
+.lodging-whatsapp-button {
+    /* Contenedor del enlace (el botón "Click aquí") */
+    display: block;
+    width: 100%;
+    
+    /* Posicionamiento del botón sobre la imagen: */
+    position: absolute;
+    top: 80%; /* Ajuste vertical para que caiga sobre el área circular */
+    left: 60%; /* Ajuste horizontal */
+    transform: translate(-50%, -50%); /* Centra el botón en ese punto */
+    
+    max-width: 150px; /* Tamaño máximo del botón */
+    transition: transform 0.2s;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.lodging-whatsapp-button:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.whatsapp-button-image {
+    /* La imagen del botón "Click aquí" */
+    width: 80%; /* Reducimos el ancho de la imagen 'Click aquí' para que quepa en el círculo */
+    margin-top: 9vh;
+    margin-left: 5vh;
+    height: auto;
+}
+
+/* ---------------------------------- */
+/* K. Bloque de Confirmación (RSVP) - CORRECCIÓN DE POSICIÓN Y ESCALA */
+/* ---------------------------------- */
+.confirmation-block {
+    margin: 20px auto; 
+    display: block; 
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+    position: relative; 
+    padding-bottom: 50px; 
+}
+
+.confirmation-image-full {
+    width: 85%;
+    max-width: 350px; 
+    height: auto;
+    border-radius: 10px; 
+}
+
+.confirmation-whatsapp-button-final {
+    display: block;
+    width: 100%;
+    
+    /* POSICIONAMIENTO AJUSTADO: Subimos el botón significativamente */
+    position: absolute;
+    top: 70%; /* Ajustamos la posición vertical (De 90% a 70% para subirlo) */
+    left: 50%; /* Centramos horizontalmente */
+    transform: translate(-50%, -50%); 
+    
+    max-width: 150px; 
+    /* Eliminamos la transición (0.2s) para evitar el efecto "horrible" */
+    transition: none; 
+    cursor: pointer;
+    z-index: 10;
+}
+
+.confirmation-whatsapp-button-final:hover {
+    /* Mantenemos el mismo tamaño para evitar saltos o animaciones no deseadas */
+    transform: translate(-50%, -50%) scale(1.0); 
+}
+
+.whatsapp-button-image-confirm {
+    width: 100%; 
+    height: auto;
+    margin-bottom: 18vh;
+}
+
+/* ---------------------------------- */
+/* L. Bloque de Obsequio / Donación - SIN TRANSICIÓN NI SALTO */
+/* ---------------------------------- */
+.obsequio-block {
+    margin: 20px auto; 
+    display: block; 
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+    position: relative; 
+    padding-bottom: 50px; 
+}
+
+.obsequio-image-full {
+    width: 90%;
+    max-width: 380px; 
+    height: auto;
+    border-radius: 10px; 
+}
+
+.donation-button {
+    display: block;
+    width: 100%;
+    position: absolute;
+}
+
+.donation-button-image {
+    width: 60%; 
+    height: auto;
+}
+
+/* Posicionamiento del Botón 1: FASEC (En el círculo) */
+.fasec-button {
+    top: 45%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    max-width: 180px; 
+}
+
+/* Posicionamiento del Botón 2: FUNDACIÓN (Debajo del círculo) */
+.fundacion-button {
+    top: 52%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    max-width: 250px; 
+}

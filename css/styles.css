@@ -1,0 +1,114 @@
+/* ---------------------------------- */
+/* A. Fondo de la Página (Web Background) - Sin cambios */
+/* ---------------------------------- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.web-background {
+    background-image: url('../img/fondo_web.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ---------------------------------- */
+/* B. Contenedor de la Carta (Card) - Responsivo - Sin cambios */
+/* ---------------------------------- */
+.invitation-card {
+    /* Mantiene la responsividad */
+    max-width: 400px; 
+    width: 90vw; 
+    height: 150vw; 
+    max-height: 600px;
+    
+    background-image: url('../img/carta_sin_texto.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 15px; 
+    position: relative; 
+    overflow: hidden;
+    align-self: center; 
+}
+
+/* ---------------------------------- */
+/* C. El Sello (Botón de Enlace) - Centrado y Abajo - Sin cambios */
+/* ---------------------------------- */
+.seal-button {
+    display: block; 
+    width: 20%; 
+    height: 20%;
+    
+    position: absolute;
+    top: 25%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    background-image: url('../img/sello_boton.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    cursor: pointer;
+    transition: transform 0.2s; 
+}
+
+.seal-button:hover {
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* ---------------------------------- */
+/* D. Texto Personalizado - AJUSTADO para Ajuste de Línea */
+/* ---------------------------------- */
+.invitation-text {
+    position: absolute;
+    /* Posición basada en tu imagen de referencia */
+    right: 15%; 
+    bottom: 20%; 
+    
+    /* SOLUCIÓN CLAVE 1: Limita el ancho y permite ajuste de línea */
+    max-width: 40%; /* Reducido a 40% del ancho de la tarjeta para forzar el ajuste */
+    white-space: normal; /* Permite que el texto fluya en varias líneas */
+    
+    /* SOLUCIÓN CLAVE 2: Tamaño de fuente responsivo */
+    font-size: 3.2vw; 
+    
+    /* Estilos */
+    font-family: 'The Seasons', serif; 
+    font-weight: 500; 
+    color: #0c3d35; 
+    text-align: right; /* Alinea el texto a la derecha */
+    line-height: 1.1;
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; /* Ligeramente reducido para ahorrar espacio */
+}
+
+/* Estilo para las líneas secundarias (ej: "y Sra.") */
+.invitation-text .secondary-line {
+    display: block;
+    font-size: 0.7em; 
+    font-weight: 400;
+    margin-top: 2px; 
+}
+
+/* Media query para pantallas más grandes (Desktop) */
+@media (min-width: 650px) {
+    .invitation-card {
+        /* Fija el alto de la tarjeta para desktop */
+        height: 600px; 
+    }
+    .invitation-text {
+        /* Fija el tamaño de fuente en pantallas grandes */
+        font-size: 20px; 
+    }
+}

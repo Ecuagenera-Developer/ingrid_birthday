@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Evento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/details_styles.css"> 
+</head>
+<body>
+
+    <audio id="background-music" autoplay loop>
+        <source src="resources/audio.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="web-background">
+        <div class="invitation-card-details">
+            </div>
+
+          <div class="countdown-container">
+            <div id="countdown-timer" class="countdown-timer">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <span class="label">Min.</span>
+                </div>
+            </div>
+          </div>
+
+        <div class="photo-container">
+            <img src="img/foto.png" alt="Persona del evento" class="main-event-photo">
+        </div>
+
+        <div class="location-label-block">
+            
+            <div class="location-badge">
+                <div class="location-details">
+                    <a href="https://maps.app.goo.gl/GHNQRRa73KQDbo7X6" target="_blank" class="map-button">
+                        <img src="img/ubicacion.png" alt="Ver Ubicación" class="location-button-image">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+   <div class="agenda-block">
+            <img src="img/agenda.png" alt="Agenda de la Noche" class="agenda-image-full">
+        </div>
+
+        <div class="dress-code-block">
+            <img src="img/vestimenta.png" alt="Código de Vestimenta" class="dress-code-image-full">
+        </div>
+
+        
+    </div>
+
+    <div class="lodging-block">
+            <img src="img/tarifa.png" alt="Hospedaje Tarifa Especial" class="lodging-image-full">
+            
+            <a href="https://api.whatsapp.com/send?phone=593997034680&text=Hola,%20soy%20invitado%20de%20Ingrid%20de%20Portilla%20%20y%20deseo%20usar%20el%20c%C3%B3digo%20IP54%20para%20mi%20reserva.%20%C2%BFPodr%C3%ADan%20confirmar%20disponibilidad?" target="_blank" class="lodging-whatsapp-button">
+                <img src="img/boton_tarifa.png" alt="Click aquí para reservar" class="whatsapp-button-image">
+            </a>
+    </div>
+
+    <div class="confirmation-block">
+        <img src="img/confirmacion.png" alt="Obsequio y Confirmación" class="confirmation-image-full">
+        
+        <a href="https://api.whatsapp.com/send?phone=17602141952&text=Hola,%20muchas%20gracias%20por%20la%20invitaci%C3%B3n%20%E2%9C%A8%20confirmo%20la%20asistencia%20de%20(Nombres)" target="_blank" class="confirmation-whatsapp-button-final">
+            <img src="img/boton_confirmacion.png" alt="Confirmar Aquí" class="whatsapp-button-image-confirm">
+        </a>
+    </div>
+
+    <div class="obsequio-block">
+        <img src="img/obsequio.png" alt="Información de Obsequio" class="obsequio-image-full">
+        
+        <a href="https://sites.google.com/view/obsequioingridbirthday/inicio?authuser=1" target="_blank" class="donation-button fasec-button">
+            <img src="img/fasec.png" alt="Donar a FASEC" class="donation-button-image">
+        </a>
+
+        <a href="https://sites.google.com/view/santamariadelaesperanza/inicio?authuser=1" target="_blank" class="donation-button fundacion-button">
+            <img src="img/fundacion.png" alt="Donar a Fundación Santa María" class="donation-button-image">
+        </a>
+    </div>
+
+    <script>
+        // Script para intentar activar el autoplay tras el primer clic
+        document.body.addEventListener('click', () => {
+            document.getElementById('background-music').play().catch(e => {
+                console.log("Autoplay blocked:", e);
+            });
+        }, { once: true });
+    </script>
+    
+    <script src="js/countdown.js"></script>
+</body>
+</html>
